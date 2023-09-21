@@ -1,0 +1,33 @@
+{
+  "name": "nodo",
+  "version": "1.0.0",
+  "description": "ionodo irc20 token",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "asbuild:debug": "asc assembly/index.ts --target debug",
+    "asbuild:release": "asc assembly/index.ts --target release",
+    "asbuild": "npm run asbuild:debug && npm run asbuild:release",
+    "start": "npx serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "nodo"
+  },
+  "author": "WinstonFawkes",
+  "license": "ISC",
+  "devDependencies": {
+    "assemblyscript": "^0.27.9",
+    "jest": "^29.7.0"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./build/release.js",
+      "types": "./build/release.d.ts"
+    }
+  },
+  "dependencies": {
+    "idena-sdk-as": "0.0.29"
+  }
+}
